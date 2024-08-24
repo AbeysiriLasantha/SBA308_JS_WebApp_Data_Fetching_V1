@@ -1,0 +1,100 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.menu-bar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-bar li {
+    margin: 0 20px;
+}
+
+.menu-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.menu-bar a:hover {
+    color: #ff6347;
+}
+
+.search-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#searchBox {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #ff4500;
+}
+
+.main-pic-section {
+    margin: 50px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.pic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pic-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#popularPlacesButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#popularPlacesButton:hover {
+    background-color: #555;
+}
