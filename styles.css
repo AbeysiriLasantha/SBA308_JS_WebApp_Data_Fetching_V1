@@ -105,3 +105,23 @@ header {
 #popularPlacesButton:hover {
     background-color: #555;
 }
+
+.countryDivStyles{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.countryDivStyles{
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.countryNameStyles{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
