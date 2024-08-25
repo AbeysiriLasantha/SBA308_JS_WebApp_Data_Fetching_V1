@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header style = "border:solid red">
+    <header >
         <!-- <img class="headerImg" src="./images/headerImg.jpg"> -->
         <div class="search-section">
             <input type="text" id="searchText" placeholder="Search anything...">
@@ -16,24 +16,38 @@
         <nav>
             <ul class="menu-bar">
                 <li><a id="region" href="#">Region</a></li>
-                <li><a id="country" href="#">Country</a></li>
-                <li><a id="city" href="#">City</a></li>
                 <li><a id="language" href="#">Language </a></li>
             </ul>
         </nav>
     </header>
+   <!-- Contry Info Div -->
+    <!-- <section class="mainBodyContainer">  -->
+     <section class="displayInfo">
 
-    <section class="displayInfo" style = "border:solid orange">
-        <h1 class="countryName"> Country Info </h1>
-    </section>
+    
 
-    <main style = "border:solid pink">
-        <section class="countryInfo" style = "border:solid green">
-            <div class="countryInfoDiv" id="countryInfoDivId" style = "border:solid blue">
-            </div>
+
+    <!-- Info Generation Div -->
+    <section class="bodySecContainer"> 
+    <main class="infoGenerationDiv"> 
+    <!-- <main style = "border:solid pink"> -->
+        
+        <section class="countryInfo">
+            <div class="countryInfoGenDiv" id="countryInfoDivId" style = "border:solid blue"> </div>
         </section>
+        
+    
+    <section class="countryPlaces" >
+        <div class="countryPlacesDiv" id="countryPlacesDivId" style = "border:solid blue"> </div>
+    </section>
     </main>
+</section>    
+    <!-- </section> -->
 
-    <script src="app.js"></script>
+
+    </section>
+    <!-- </section> -->
+
+    <script type="module" src="app.js"></script>
 </body>
 </html>
