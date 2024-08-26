@@ -1,26 +1,36 @@
-// app.js
+// app.mjs
+// =======
 
 import { fetchCountryData, fetchMoreCountryInfo } from './myModules/fetch.mjs';
 import { displayCountryData, displayMoreInformation } from './myModules/ui.mjs';
 
 // Getting elements
-const searchRegion = document.getElementById('searchRegion');
-const searchLanguage = document.getElementById('searchLanguage');
-const searchButton = document.getElementById('searchButton');
+const searchTextElement = document.getElementById('searchText');
+const searchButtonRegion = document.getElementById('searchButtonRegion');
+const searchButtonLanguage = document.getElementById('searchButtonLanguage');
 
-searchButton.addEventListener('click', function () {
-    const regionValue = searchRegion.value;
-    const languageValue = searchLanguage.value;
+// Asynchronous function for handling search
+async function handleSearch(searchByVal) {
+    const searchText = searchTextElement.value;
 
-    if (regionValue) {
-        fetchCountryData(regionValue, "region")
-            .then(data => displayCountryData(data, fetchMoreCountryInfo, displayMoreInformation))
-            .catch(error => alert(error));
-    } else if (languageValue) {
-        fetchCountryData(languageValue, "language")
-            .then(data => displayCountryData(data, fetchMoreCountryInfo, displayMoreInformation))
-            .catch(error => alert(error));
-    } else {
-        alert('Please enter a value to search');
+    try {
+        if (searchByVal === 'region') {
+            const data = await fetchCountryData(searchText, "region");
+            displayCountryData(data, fetchMoreCountryInfo, displayMoreInformation);
+        } else if (searchByVal === 'language') {
+            const data = await fetchCountryData(searchText, "language");
+            displayCountryData(data, fetchMoreCountryInfo, displayMoreInformation);
+        } else if (searchByVal === 'all') {
+            const data = await fetchCountryData(searchText, "all");
+            displayCountryData(data, fetchMoreCountryInfo, displayMoreInformation);
+        } else {
+            alert('Please enter a value to search');
+        }
+    } catch (error) {
+        alert(error);
     }
-});
+}
+
+// Event listener for search buttons
+searchButtonLanguage.addEventListener('click', () => handleSearch('language'));
+searchButtonRegion.addEventListener('click', () => handleSearch('region'));

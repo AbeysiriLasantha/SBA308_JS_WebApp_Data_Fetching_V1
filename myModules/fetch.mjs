@@ -1,9 +1,9 @@
 // fetch.mjs
+// =========
 
-export function fetchCountryData(userSearch, searchBy) {
+export async function fetchCountryData(userSearch, searchBy) {
     if (userSearch === '') {
-        alert('Please Enter Value to Search');
-        return;
+        throw new Error('Please Enter Value to Search');
     }
 
     let baseUrl;
@@ -14,25 +14,27 @@ export function fetchCountryData(userSearch, searchBy) {
     } else if (searchBy === "language") {
         baseUrl = 'https://restcountries.com/v3.1/lang/';
         searchUrl = baseUrl + userSearch;
+    }else if (searchBy === "all") {
+        baseUrl = 'https://restcountries.com/v3.1/all';
+        searchUrl = baseUrl;
     }
 
-    return new Promise((resolve, reject) => {
-        fetch(searchUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('There is no such a region');
-                }
-                return response.json();
-            })
-            .then(data => resolve(data))
-            .catch(error => reject(error));
-    });
+    try {
+        const response = await fetch(searchUrl);
+        if (!response.ok) {
+            throw new Error(`There is no such a  ${searchBy}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        throw error;
+    }
 }
 
 export function fetchMoreCountryInfo(country) {
-    return new Promise((resolve, reject) => {
-        const apiUrl = `https://en.wikivoyage.org/w/api.php?action=query&list=search&srsearch=${country}%20tourism&format=json&origin=*`;
+    const apiUrl = `https://en.wikivoyage.org/w/api.php?action=query&list=search&srsearch=${country}%20tourism&format=json&origin=*`;
 
+    return new Promise((resolve, reject) => {
         fetch(apiUrl)
             .then(response => {
                 if (!response.ok) {

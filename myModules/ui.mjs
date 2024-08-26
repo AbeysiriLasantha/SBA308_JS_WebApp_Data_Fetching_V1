@@ -1,11 +1,12 @@
 // ui.mjs
+// ======
+
 export function displayCountryData(data, fetchMoreCountryInfo, displayMoreInformation) {
     const countryInfoDivId = document.getElementById('countryInfoDivId');
     countryInfoDivId.innerHTML = '';
 
     const gridContainer = document.createElement('div');
     gridContainer.classList.add('countryDivStyles');
-
 
     const limitedData = data.slice(0, 150);
 
@@ -47,5 +48,3 @@ export function displayMoreInformation(data) {
         countryPlacesDivId.appendChild(countryItemsDetails);
     });
 }
-
-
