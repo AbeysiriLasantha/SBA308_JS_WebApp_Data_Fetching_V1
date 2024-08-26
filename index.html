@@ -7,46 +7,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header >
-        <!-- <img class="headerImg" src="./images/headerImg.jpg"> -->
-        <div class="search-section">
-            <input type="text" id="searchText" placeholder="Search anything...">
+    <header>
+        <h2>Experience Places ~ It's Your Life!</h2>
+    </header>
+
+    <section class="displayInfo">
+        <img src="./images/boat1.jpg" alt="Travel" class="bodyPic">
+
+        <div id="countryInfoDiv">
+            <h1 class="section-title">Searching for Places</h1>
+            <div class="search-options">
+                <div class="search-option">
+                    <label for="searchRegion">Search by Region:</label>
+                    <input type="text" id="searchRegion" class="search-input" placeholder="Enter region">
+                </div>
+                <div class="search-option">
+                    <label for="searchLanguage">Search by Language:</label>
+                    <input type="text" id="searchLanguage" class="search-input" placeholder="Enter language">
+                </div>
+                <button id="searchButton" class="search-button">Search</button>
+            </div>
         </div>
 
-        <nav>
-            <ul class="menu-bar">
-                <li><a id="region" href="#">Region</a></li>
-                <li><a id="language" href="#">Language </a></li>
-            </ul>
-        </nav>
-    </header>
-   <!-- Contry Info Div -->
-    <!-- <section class="mainBodyContainer">  -->
-     <section class="displayInfo">
-
-    
-
-
-    <!-- Info Generation Div -->
-    <section class="bodySecContainer"> 
-    <main class="infoGenerationDiv"> 
-    <!-- <main style = "border:solid pink"> -->
-        
-        <section class="countryInfo">
-            <div class="countryInfoGenDiv" id="countryInfoDivId" style = "border:solid blue"> </div>
+        <section class="bodySecContainer">
+            <main class="infoGenerationDiv">
+                <div class="countryInfoGenDiv" id="countryInfoDivId"></div>
+                <div class="countryPlacesDiv" id="countryPlacesDivId"></div>
+            </main>
         </section>
-        
-    
-    <section class="countryPlaces" >
-        <div class="countryPlacesDiv" id="countryPlacesDivId" style = "border:solid blue"> </div>
     </section>
-    </main>
-</section>    
-    <!-- </section> -->
-
-
-    </section>
-    <!-- </section> -->
 
     <script type="module" src="app.mjs"></script>
 </body>

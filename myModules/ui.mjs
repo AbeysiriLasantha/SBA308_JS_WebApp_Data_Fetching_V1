@@ -7,7 +7,7 @@ export function displayCountryData(data, fetchMoreCountryInfo, displayMoreInform
     gridContainer.classList.add('countryDivStyles');
 
 
-    const limitedData = data.slice(0, 10);
+    const limitedData = data.slice(0, 150);
 
     limitedData.forEach((item) => {
         const countryDiv = document.createElement('div');
@@ -47,3 +47,5 @@ export function displayMoreInformation(data) {
         countryPlacesDivId.appendChild(countryItemsDetails);
     });
 }
+
+
