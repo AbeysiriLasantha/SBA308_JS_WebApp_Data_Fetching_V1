@@ -1,5 +1,5 @@
 <h1 align="center"> "SBA 308A: JavaScript Web Application" </h1>
-<h3 align="center"> Don't forget anything </h3>
+<h3 align="center"> Experience Places ~ It's Your Life! </h3>
 
 ## Introduction
 

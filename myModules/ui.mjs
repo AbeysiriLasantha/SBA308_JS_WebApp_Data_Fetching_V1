@@ -21,6 +21,8 @@ export function displayCountryData(data, fetchMoreCountryInfo, displayMoreInform
 
         countryName.addEventListener('click', function () {
             const countryQuery = item.name.common;
+            const flagImg = document.getElementsByClassName ('flagImg');
+            flagImg.src = item.flags.png;
             fetchMoreCountryInfo(countryQuery)
                 .then(data => displayMoreInformation(data))
                 .catch(error => alert(error));
@@ -28,9 +30,21 @@ export function displayCountryData(data, fetchMoreCountryInfo, displayMoreInform
 
         const officialName = document.createElement('p');
         officialName.textContent = `Official Name: ${item.name.official}`;
+        const mainRegion = document.createElement('p');
+        mainRegion.textContent = `Region: ${item.region}`;
+        const subRegion = document.createElement('p');
+        subRegion.textContent = `Sub Region: ${item.subregion}`;
+
+        const totalPopulation = document.createElement('p');
+        totalPopulation.textContent = `Population: ${item.population}`;
 
         countryDiv.appendChild(countryName);
         countryDiv.appendChild(officialName);
+        countryDiv.appendChild(mainRegion);
+        countryDiv.appendChild(subRegion);
+        countryDiv.appendChild(totalPopulation);
+        
+
         gridContainer.appendChild(countryDiv);
     });
 

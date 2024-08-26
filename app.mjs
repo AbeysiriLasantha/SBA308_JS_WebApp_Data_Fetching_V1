@@ -34,3 +34,5 @@ async function handleSearch(searchByVal) {
 // Event listener for search buttons
 searchButtonLanguage.addEventListener('click', () => handleSearch('language'));
 searchButtonRegion.addEventListener('click', () => handleSearch('region'));
+// Call handleSearch with "all" when the page loads
+// window.addEventListener('load', () => handleSearch('all'));

@@ -101,12 +101,12 @@ header {
 
 .infoGenerationDiv {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    width: 70%;
+    width: auto;
     height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #f8f3f3cc;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -126,12 +126,25 @@ header {
 .countryInfoGenDiv,
 .countryPlacesDiv {
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: rgba(255, 255, 255, 0.9); */
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
     width: 90%;
-    margin: 0 auto;
+    margin: 10px;
 }
+
+/* .flagDiv{
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin: 10px;
+    margin-left: 20px;
+} */
+
+/* .flagImg{
+    width: 100%;
+    height: 150px;
+} */
 
 .countryDivStyles {
     display: grid;
@@ -186,3 +199,7 @@ header {
 .countryPlacesDivId a:hover {
     background-color: #45a049;
 }
+
+/* .bodySecContainer{
+    background-color: #f8f3f3cc;
+} */

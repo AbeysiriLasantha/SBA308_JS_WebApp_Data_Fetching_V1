@@ -2,9 +2,11 @@
 // =========
 
 export async function fetchCountryData(userSearch, searchBy) {
-    if (userSearch === '') {
-        throw new Error('Please Enter Value to Search');
-    }
+    if (searchBy!='all') {
+        if (userSearch === '') {
+            throw new Error('Please Enter Value to Search');
+        }
+   }
 
     let baseUrl;
     let searchUrl;
